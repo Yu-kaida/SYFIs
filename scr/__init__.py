@@ -8,3 +8,8 @@ db = SQLAlchemy(app)
 from .models import member_fav
 
 import scr.views
+
+# To create database
+# from scr import app, db
+# with app.app_context():
+#     db.create_all()

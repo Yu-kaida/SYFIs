@@ -19,17 +19,17 @@ def sample_form():
     if request.method == 'GET':
         return render_template('syfis/form.html')
     if request.method == 'POST':
-        form_name = request.form['name']
-        form_id = request.form['id']
-        form_fav1 = request.form['fav1']
-        form_fav2 = request.form['fav2']
-        form_fav3 = request.form['fav3']
-        form_fav4 = request.form['fav4']
-        form_fav5 = request.form['fav5']
+        form_name = request.form.get('name')
+        form_fav1 = request.form.get('favorite1')
+        form_fav2 = request.form.get('favorite2')
+        form_fav3 = request.form.get('favorite3')
+        form_fav4 = request.form.get('favorite4')
+        form_fav5 = request.form.get('favorite5')
 
         fav_member = Member(
-            username=form_name, 
-            id=form_id, 
+            # id auto increment
+            id=None,
+            name=form_name,  
             fav1=form_fav1, 
             fav2=form_fav2, 
             fav3=form_fav3, 
