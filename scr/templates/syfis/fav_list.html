@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>ALL MEMBER's FAV</h2>
+    <ul>
+        {% for list in fav_list %}
+        <li>Name : {{ list.name }} ID : {{ list.id }} Fav : {{ list.fav1 }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
+    

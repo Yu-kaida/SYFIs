@@ -1,5 +1,7 @@
 from scr import app
-from flask import render_template, request
+from flask import render_template, request, redirect, url_for
+from scr import db
+from scr.models.member_fav import Member
 
 @app.route('/')
 def index():
@@ -36,5 +38,9 @@ def sample_form():
         )
         db.session.add(fav_member)
         db.session.commit()
-        return render_template('syfis/form.html')
-    
+        return redirect(url_for('index'))
+
+@app.route('/list')
+def fav_list():
+    fav_list = Member.query.all()
+    return render_template('syfis/fav_list.html', fav_list=fav_list)
