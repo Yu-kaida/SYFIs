@@ -1,0 +1,14 @@
+{% extends "layout.html"%}
+
+{% block content %}
+<div class="container">
+    <h1>Share Your Favorite Items!</h1>
+    <img src="{{ url_for('static',filename='images/SYFIS!.png')}}">
+    <ul>
+        {% for i in data.listing %}
+        <li>{{ i }}</li>
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}  

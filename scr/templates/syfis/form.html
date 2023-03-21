@@ -1,0 +1,79 @@
+<!--
+using Flask to create a simple form
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYFIS Form</title>
+</head>
+<body>
+<!--
+using css and bootstrap to style the form
+-->
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        form {
+            width: 50%;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+        }
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #43a047;
+        }
+    </style>
+    <!--
+    the number of forms are limited to 5
+    name is required
+    ID is required 
+    --->
+    <h1>SYFIS Form</h1>
+    <form action="/form" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="id">ID</label>
+        <input type="text" name="id" id="id" required>
+        <label for="favorite1">Favorite</label>
+        <input type="text" name="favorite1" id="favorite1" required>
+        <label for="favorite2">Favorite</label>
+        <input type="text" name="favorite2" id="favorite2" >
+        <label for="favorite3">Favorite</label>
+        <input type="text" name="favorite3" id="favorite3" >
+        <label for="favorite4">Favorite</label>
+        <input type="text" name="favorite4" id="favorite4" >
+        <label for="favorite5">Favorite</label>
+        <input type="text" name="favorite5" id="favorite5" >
+        <label for="comment">Comment</label>
+        <textarea name="comment" id="comment" cols="30" rows="10" placeholder="If you have any messages. Don't write too much!"></textarea>
+        <input type="submit" value="Submit">
+</body>
+</html>
+</html>
